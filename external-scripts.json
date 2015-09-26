@@ -8,5 +8,6 @@
   "hubot-redis-brain",
   "hubot-rules",
   "hubot-shipit",
-  "hubot-google-translate"
+  "hubot-google-translate",
+  "hubot-victory"
 ]

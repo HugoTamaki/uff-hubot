@@ -10,5 +10,6 @@
   "hubot-google-translate",
   "hubot-victory",
   "applause",
-  "hubot-heroku-keepalive"
+  "hubot-heroku-keepalive",
+  "hubot-wolfram"
 ]

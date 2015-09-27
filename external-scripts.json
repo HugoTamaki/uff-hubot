@@ -9,5 +9,6 @@
   "hubot-shipit",
   "hubot-google-translate",
   "hubot-victory",
-  "applause"
+  "applause",
+  "hubot-heroku-keepalive"
 ]

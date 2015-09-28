@@ -1,1 +1,2 @@
-web: bin/hubot --adapter slack --name slackbot
+web: bin/hubot --adapter slack
+app: bin/hubot --adapter campfire --name slackbot

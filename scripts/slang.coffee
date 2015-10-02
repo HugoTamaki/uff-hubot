@@ -14,6 +14,6 @@ frases = [
 ]
 
 module.exports = (robot) ->
-  robot.hear /porra|caralho|puta|merda|cu|pariu|pqp|foder|foda|fodeu|fudeu|foda-se|fodasse|fodendo|fudendo|phoda|cacete|kct/i, (msg) ->
+  robot.hear /(\bporra\b|\bcaralho\b|\bputa\b|\bmerda\b|\bcu\b|\bpariu\b|\bpqp\b|\bfoder\b|\bfoda\b|\bfodeu\b|\bfudeu\b|\bfoda-se\b|\bfodasse\b|\bfodendo\b|\bfudendo\b|\bphoda\b|\bcacete\b|\bkct\b)/, (msg) ->
     randomNumber = Math.floor(Math.random() * (8 - 0 + 1)) + 0
     msg.send frases[randomNumber]    

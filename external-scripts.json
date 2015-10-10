@@ -11,5 +11,6 @@
   "hubot-victory",
   "applause",
   "hubot-heroku-keepalive",
-  "hubot-wolfram"
+  "hubot-wolfram",
+  "hubot-javascript"
 ]

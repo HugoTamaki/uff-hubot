@@ -12,6 +12,7 @@
     "hubot-google-translate": "^0.2.0",
     "hubot-help": "^0.1.1",
     "hubot-heroku-keepalive": "^1.0.0",
+    "hubot-javascript": "0.0.7",
     "hubot-maps": "0.0.2",
     "hubot-pugme": "^0.1.0",
     "hubot-redis-brain": "0.0.3",
@@ -20,7 +21,9 @@
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^3.3.0",
     "hubot-victory": "^1.3.0",
-    "hubot-wolfram": "^1.0.8"
+    "hubot-wolfram": "^1.0.8",
+    "htmlparser": "1.7.6",
+    "soupselect": "0.2.0"
   },
   "engines": {
     "node": "0.10.x"

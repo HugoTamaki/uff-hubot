@@ -21,7 +21,10 @@ getClimate = (msg, city, cb) ->
   query = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='#{city}')"
   url = "#{climate.base_url}"
 
-  msg.http(url + "?q=" + query + "&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&language=pt_br")
+  msg.http(url)
+    .query
+      q: query,
+      format: 'json'
     .get() (err, res, body) ->
       response = undefined
       try

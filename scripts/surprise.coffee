@@ -2,7 +2,6 @@
 module.exports = (robot) ->
   
   words = [
-      'tempo',
       'praia',
       'clima',
       'frio',
@@ -10,8 +9,25 @@ module.exports = (robot) ->
       'calor',
       'sorvete',
       'congelando',
-      'preguiça'
+      'preguiça',
+      'chuva',
+      'vento'
     ]
+
+  cold_frases = [
+    'Tá ruim pra praia hein? Pena que não tá na dormindo agora :stuck_out_tongue:',
+    'Se ferrou, não tem sol',
+    'Tá bom pra ficar em casa!',
+    'Muito frio ae?',
+    'Quer um casaco?'
+  ]
+
+  hot_frases = [
+    'Tá quente hoje, vai pra praia!',
+    'Eu vou a praia, vocês vão?',
+    'Estou morrendo de calor... pena que estão trabalhando ae :stuck_out_tongue:',
+    'Vai um suquinho gelado ae?'
+  ]
 
   regex = new RegExp('(?:^|\\s)(' + words.join('|') + ')(?:\\s|\\.|\\?|!|$)', 'i');
 
@@ -21,9 +37,11 @@ module.exports = (robot) ->
       temp = url.item.condition.temp
       message = ""
       if (climate == 'Mostly Cloudy' || climate == 'Rain Shower') && ((temp - 32)/1.8000).toFixed(2) < 22.00
-        message += 'Tá ruim pra praia hein? Pena que não tá na dormindo agora :stuck_out_tongue:'
+        randomNumber = Math.floor(Math.random() * (4 - 0 + 1)) + 0
+        message += cold_frases[randomNumber]
       else if (climate == 'Fair') && ((temp - 32)/1.8000).toFixed(2) >= 22.00
-        message += 'Tá quente hoje, vai pra praia!'
+        randomNumber = Math.floor(Math.random() * (3 - 0 + 1)) + 0
+        message += hot_frases[randomNumber]
       msg.send message unless message == ""
 
 getClimate = (msg, cb) ->

@@ -13,7 +13,36 @@ frases = [
   "Maria, para com isso!"
 ]
 
+words = [
+  'porra',
+  'caralho',
+  'puta',
+  'merda',
+  'cu',
+  'puta que pariu',
+  'arrombado',
+  'arrombada',
+  'foder',
+  'foda',
+  'fuder',
+  'foder',
+  'foda-se',
+  'fodasse',
+  'fodendo',
+  'fudendo',
+  'phoda',
+  'cacete',
+  'kct',
+  'escroto',
+  'escrotinho',
+  'fuderoso',
+  'putinha',
+  'puta'
+]
+
+regex = new RegExp('(?:^|\\s)(' + words.join('|') + ')(?:\\s|\\.|\\?|!|$)', 'i');
+
 module.exports = (robot) ->
-  robot.hear /(\bporra\b|\bcaralho\b|\bputa\b|\bmerda\b|\bcu\b|\bpariu\b|\bpqp\b|\bfoder\b|\bfoda\b|\bfodeu\b|\bfudeu\b|\bfoda-se\b|\bfodasse\b|\bfodendo\b|\bfudendo\b|\bphoda\b|\bcacete\b|\bkct\b|\barrombado\b|\bescroto\b|\bescrotinho\b|\bfuderoso\b|\bputinha\b)/, (msg) ->
+  robot.hear regex, (msg) ->
     randomNumber = Math.floor(Math.random() * (8 - 0 + 1)) + 0
     msg.send frases[randomNumber]    

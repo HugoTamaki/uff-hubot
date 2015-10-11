@@ -1,9 +1,6 @@
-# not working well
-
-climate =
-  base_url: 'https://query.yahooapis.com/v1/public/yql'
 
 module.exports = (robot) ->
+  
   words = [
       'tempo',
       'praia',
@@ -15,6 +12,7 @@ module.exports = (robot) ->
       'congelando',
       'preguiça'
     ]
+
   regex = new RegExp('(?:^|\\s)(' + words.join('|') + ')(?:\\s|\\.|\\?|!|$)', 'i');
 
   robot.hear regex, (msg) ->
@@ -22,8 +20,6 @@ module.exports = (robot) ->
       climate = url.item.condition.text
       temp = url.item.condition.temp
       message = ""
-      console.log(((temp - 32)/1.8000).toFixed(2) >= 22.00)
-      console.log(climate)
       if (climate == 'Mostly Cloudy' || climate == 'Rain Shower') && ((temp - 32)/1.8000).toFixed(2) < 22.00
         message += 'Tá ruim pra praia hein? Pena que não tá na dormindo agora :stuck_out_tongue:'
       else if (climate == 'Fair') && ((temp - 32)/1.8000).toFixed(2) >= 22.00
@@ -31,10 +27,12 @@ module.exports = (robot) ->
       msg.send message unless message == ""
 
 getClimate = (msg, cb) ->
-  city = 'Rio de Janeiro'
+  climate =
+    base_url: 'https://query.yahooapis.com/v1/public/yql'
+
+  city = 'Niterói'
   query = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='#{city}')"
   url = "#{climate.base_url}"
-  console.log query
 
   msg.http(url)
     .query

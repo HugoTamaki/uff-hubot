@@ -36,10 +36,10 @@ module.exports = (robot) ->
       climate = url.item.condition.text
       temp = url.item.condition.temp
       message = ""
-      if (climate == 'Mostly Cloudy' || climate == 'Rain Shower') && ((temp - 32)/1.8000).toFixed(2) < 22.00
+      if (climate == 'Mostly Cloudy' || climate == 'Rain Shower') && ((temp - 32)/1.8000).toFixed(2) < 23.00
         randomNumber = Math.floor(Math.random() * (4 - 0 + 1)) + 0
         message += cold_frases[randomNumber]
-      else if (climate == 'Fair') && ((temp - 32)/1.8000).toFixed(2) >= 22.00
+      else if (climate == 'Fair') && ((temp - 32)/1.8000).toFixed(2) >= 27.00
         randomNumber = Math.floor(Math.random() * (3 - 0 + 1)) + 0
         message += hot_frases[randomNumber]
       msg.send message unless message == ""

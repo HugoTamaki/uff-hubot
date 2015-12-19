@@ -12,5 +12,6 @@
   "applause",
   "hubot-heroku-keepalive",
   "hubot-wolfram",
-  "hubot-javascript"
+  "hubot-javascript",
+  "hubot-google-images"
 ]

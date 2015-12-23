@@ -15,5 +15,6 @@
   "hubot-javascript",
   "hubot-google-images",
   "hubot-spotify-me",
-  "hubot-shy"
+  "hubot-shy",
+  "hubot-sentiment"
 ]

@@ -13,5 +13,6 @@
   "hubot-heroku-keepalive",
   "hubot-wolfram",
   "hubot-javascript",
-  "hubot-google-images"
+  "hubot-google-images",
+  "hubot-spotify-me"
 ]

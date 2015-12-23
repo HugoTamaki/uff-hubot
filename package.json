@@ -20,6 +20,7 @@
     "hubot-rules": "^0.1.1",
     "hubot-scripts": "^2.16.2",
     "hubot-shipit": "^0.2.0",
+    "hubot-shy": "^1.0.2",
     "hubot-slack": "^3.3.0",
     "hubot-spotify-me": "^1.0.1",
     "hubot-victory": "^1.3.0",
